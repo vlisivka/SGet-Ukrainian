@@ -477,7 +477,7 @@ namespace SGet
 
                     if (this.FileSize <= 0)
                     {
-                        Xceed.Wpf.Toolkit.MessageBox.Show("The requested file does not exist!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Xceed.Wpf.Toolkit.MessageBox.Show("The requested file does not exist!\nFile size: "+this.FileSize, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         this.HasError = true;
                     }
                 }

@@ -46,11 +46,11 @@ namespace SGet
 
             propertyNames = new List<string>();
             propertyNames.Add("URL");
-            propertyNames.Add("Supports Resume");
-            propertyNames.Add("File Type");
-            propertyNames.Add("Download Folder");
-            propertyNames.Add("Average Speed");
-            propertyNames.Add("Total Time");
+            propertyNames.Add("Підтримує продовження");
+            propertyNames.Add("Тип файлу");
+            propertyNames.Add("Папка для завантаження");
+            propertyNames.Add("Середня швидкість");
+            propertyNames.Add("Загальний час");
 
             propertyValues = new List<string>();
             propertiesList = new List<PropertyModel>();

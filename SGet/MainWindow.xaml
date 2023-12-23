@@ -92,16 +92,16 @@
         <tb:TaskbarIcon x:Name="XNotifyIcon" IconSource="/SGet;component/Resources/download_icon.ico" ToolTipText="SGet" TrayLeftMouseUp="tcmShowMainWindow_Click">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Show Main Window" Name="tcmShowMainWindow" Click="tcmShowMainWindow_Click" />
+                    <MenuItem Header="Показати головне вікно" Name="tcmShowMainWindow" Click="tcmShowMainWindow_Click" />
                     <Separator />
-                    <MenuItem Header="Add New Download..." Name="tcmNewDownload" Click="btnNewDownload_Click" />
-                    <MenuItem Header="Create Batch Download..." Name="tcmBatchDownload" Click="btnBatchDownload_Click" />
+                    <MenuItem Header="Створити нове завантаження..." Name="tcmNewDownload" Click="btnNewDownload_Click" />
+                    <MenuItem Header="Завантажити по шаблону..." Name="tcmBatchDownload" Click="btnBatchDownload_Click" />
                     <Separator />
-                    <MenuItem Header="Start All" Name="tcmStartAll" Click="cmStartAll_Click" />
-                    <MenuItem Header="Pause All" Name="tcmPauseAll" Click="cmPauseAll_Click" />
+                    <MenuItem Header="Розпочати всі" Name="tcmStartAll" Click="cmStartAll_Click" />
+                    <MenuItem Header="Призупинити всі" Name="tcmPauseAll" Click="cmPauseAll_Click" />
                     <Separator />
-                    <MenuItem Header="About..." Name="tcmAbout" Click="btnAbout_Click" />
-                    <MenuItem Header="Exit" Name="tcmExit" Click="tcmExit_Click" />
+                    <MenuItem Header="Про..." Name="tcmAbout" Click="btnAbout_Click" />
+                    <MenuItem Header="Вийти" Name="tcmExit" Click="tcmExit_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
@@ -110,41 +110,41 @@
             <ribbon:Ribbon.ApplicationMenu>
                 <ribbon:RibbonApplicationMenu Visibility="Collapsed" IsMainMenu="True" Name="ribbonMenu"></ribbon:RibbonApplicationMenu>
             </ribbon:Ribbon.ApplicationMenu>
-            <ribbon:RibbonTab Header="Downloads" Name="ribbonTabMain">
-                <ribbon:RibbonGroup Header="Add/Remove" Name="AddRemoveGroup" Width="Auto">
-                    <ribbon:RibbonButton Label="Add New" Name="btnNewDownload" Click="btnNewDownload_Click" LargeImageSource="/SGet;component/Resources/new.png" />
-                    <ribbon:RibbonButton Label="Create Batch" Name="btnBatchDownload" Click="btnBatchDownload_Click" LargeImageSource="/SGet;component/Resources/batch.png" />
-                    <ribbon:RibbonButton Label="Delete" Name="btnDelete" Click="btnDelete_Click" LargeImageSource="/SGet;component/Resources/delete.png" />
-                    <ribbon:RibbonButton Label="Clear List" Name="btnClearCompleted"  Click="btnClearCompleted_Click" LargeImageSource="/SGet;component/Resources/clear.png" />
+            <ribbon:RibbonTab Header="Завантаження" Name="ribbonTabMain">
+                <ribbon:RibbonGroup Header="Додати/Видалити" Name="AddRemoveGroup" Width="Auto">
+                    <ribbon:RibbonButton Label="Нове" Name="btnNewDownload" Click="btnNewDownload_Click" LargeImageSource="/SGet;component/Resources/new.png" />
+                    <ribbon:RibbonButton Label="По шаблону" Name="btnBatchDownload" Click="btnBatchDownload_Click" LargeImageSource="/SGet;component/Resources/batch.png" />
+                    <ribbon:RibbonButton Label="Видалити" Name="btnDelete" Click="btnDelete_Click" LargeImageSource="/SGet;component/Resources/delete.png" />
+                    <ribbon:RibbonButton Label="Очистити список" Name="btnClearCompleted"  Click="btnClearCompleted_Click" LargeImageSource="/SGet;component/Resources/clear.png" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="Process" Name="ProcessGroup">
-                    <ribbon:RibbonButton Label="Start" Name="btnStart" Click="btnStart_Click" LargeImageSource="/SGet;component/Resources/start.png" />
-                    <ribbon:RibbonButton Label="Pause" Name="btnPause" Click="btnPause_Click" LargeImageSource="/SGet;component/Resources/pause.png" />
+                <ribbon:RibbonGroup Header="Процес" Name="ProcessGroup">
+                    <ribbon:RibbonButton Label="Почати" Name="btnStart" Click="btnStart_Click" LargeImageSource="/SGet;component/Resources/start.png" />
+                    <ribbon:RibbonButton Label="Призупинити" Name="btnPause" Click="btnPause_Click" LargeImageSource="/SGet;component/Resources/pause.png" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="Settings" Name="SettingsGroup">
-                    <ribbon:RibbonButton Label="Set Limits" Name="btnSetLimits" Click="btnSetLimits_Click" LargeImageSource="/SGet;component/Resources/limits.png" />
-                    <ribbon:RibbonButton Label="Preferences" Name="btnPreferences" Click="btnPreferences_Click" LargeImageSource="/SGet;component/Resources/preferences.png" />
+                <ribbon:RibbonGroup Header="Налаштування" Name="SettingsGroup">
+                    <ribbon:RibbonButton Label="Встановити обмеження" Name="btnSetLimits" Click="btnSetLimits_Click" LargeImageSource="/SGet;component/Resources/limits.png" />
+                    <ribbon:RibbonButton Label="Налаштування" Name="btnPreferences" Click="btnPreferences_Click" LargeImageSource="/SGet;component/Resources/preferences.png" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="Show" Name="ShowGroup">
-                    <ribbon:RibbonCheckBox Label="Grid" Name="cbShowGrid" VerticalContentAlignment="Center" Margin="0,2,0,0" Click="cbShowGrid_Click" Height="Auto" />
-                    <ribbon:RibbonCheckBox Label="Properties" Name="cbShowProperties" VerticalContentAlignment="Center" Margin="0,2,0,0" IsChecked="True" Click="cbShowProperties_Click" Height="Auto" />
-                    <ribbon:RibbonCheckBox Label="Status Bar" Name="cbShowStatusBar" VerticalContentAlignment="Center" Margin="0,2,0,0" IsChecked="True" Click="cbShowStatusBar_Click" Height="Auto" />
+                <ribbon:RibbonGroup Header="Показати" Name="ShowGroup">
+                    <ribbon:RibbonCheckBox Label="Сітка" Name="cbShowGrid" VerticalContentAlignment="Center" Margin="0,2,0,0" Click="cbShowGrid_Click" Height="Auto" />
+                    <ribbon:RibbonCheckBox Label="Властивості" Name="cbShowProperties" VerticalContentAlignment="Center" Margin="0,2,0,0" IsChecked="True" Click="cbShowProperties_Click" Height="Auto" />
+                    <ribbon:RibbonCheckBox Label="Панель статусу" Name="cbShowStatusBar" VerticalContentAlignment="Center" Margin="0,2,0,0" IsChecked="True" Click="cbShowStatusBar_Click" Height="Auto" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="Info" Name="InfoGroup" Margin="1">
-                    <ribbon:RibbonButton Label="About" Name="btnAbout" Click="btnAbout_Click" LargeImageSource="/SGet;component/Resources/about.png" />
+                <ribbon:RibbonGroup Header="Інфо" Name="InfoGroup" Margin="1">
+                    <ribbon:RibbonButton Label="Про" Name="btnAbout" Click="btnAbout_Click" LargeImageSource="/SGet;component/Resources/about.png" />
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
         </ribbon:Ribbon>
 
         <StatusBar Height="26" Name="statusBar" DockPanel.Dock="Bottom" VerticalContentAlignment="Center" Background="#FFDFE9F5" BorderBrush="#FFB9C9DA" BorderThickness="1">
-            <StatusBarItem Name="statusBarDownloads" Content="Ready" Padding="10,3,0,3" />
+            <StatusBarItem Name="statusBarDownloads" Content="Готове" Padding="10,3,0,3" />
             <StatusBarItem Name="statusBarActive" Padding="0,3" />
             <StatusBarItem Name="statusBarCompleted" Padding="0,3" />
         </StatusBar>
 
         <DockPanel DockPanel.Dock="Bottom" Background="#FFF9F9F9" Name="propertiesPanel" Height="140">
             <StatusBar Height="26" Name="propertiesBar" DockPanel.Dock="Top" VerticalContentAlignment="Center" Background="#FFDFE9F5" BorderBrush="#FFB9C9DA" BorderThickness="1">
-                <StatusBarItem  Name="propertiesItem" Content="Properties" Margin="0" Padding="10,3,3,3" />
+                <StatusBarItem  Name="propertiesItem" Content="Властивості" Margin="0" Padding="10,3,3,3" />
             </StatusBar>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Name="propertiesScrollViewer">
                 <DataGrid Name="propertiesGrid" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserResizeRows="False" MinRowHeight="22" RowBackground="#FFF9F9F9" 
@@ -168,20 +168,20 @@
                             ContextMenuOpening="downloadsGrid_ContextMenuOpening" CanUserResizeRows="False">
                     <DataGrid.ContextMenu>
                         <ContextMenu>
-                            <MenuItem Header="Start" Name="cmStart" Click="btnStart_Click"  />
-                            <MenuItem Header="Pause" Name="cmPause" Click="btnPause_Click" />
+                            <MenuItem Header="Розпочати" Name="cmStart" Click="btnStart_Click"  />
+                            <MenuItem Header="Призупинити" Name="cmPause" Click="btnPause_Click" />
                             <Separator />
-                            <MenuItem Header="Delete" Name="cmDelete" Click="btnDelete_Click" />
-                            <MenuItem Header="Restart" Name="cmRestart" Click="cmRestart_Click"  />
+                            <MenuItem Header="Видалити" Name="cmDelete" Click="btnDelete_Click" />
+                            <MenuItem Header="Перезапустити" Name="cmRestart" Click="cmRestart_Click"  />
                             <Separator />
-                            <MenuItem Header="Open File" Name="cmOpenFile" Click="cmOpenFile_Click" />
-                            <MenuItem Header="Open Download Folder" Name="cmOpenDownloadFolder" Click="cmOpenDownloadFolder_Click" />
+                            <MenuItem Header="Відкрити файл" Name="cmOpenFile" Click="cmOpenFile_Click" />
+                            <MenuItem Header="Відкрити папку файлу" Name="cmOpenDownloadFolder" Click="cmOpenDownloadFolder_Click" />
                             <Separator />
-                            <MenuItem Header="Start All" Name="cmStartAll" Click="cmStartAll_Click" />
-                            <MenuItem Header="Pause All" Name="cmPauseAll" Click="cmPauseAll_Click" />
-                            <MenuItem Header="Select All" Name="cmSelectAll" Click="cmSelectAll_Click" />
+                            <MenuItem Header="Розпочати усі" Name="cmStartAll" Click="cmStartAll_Click" />
+                            <MenuItem Header="Призупинити усі" Name="cmPauseAll" Click="cmPauseAll_Click" />
+                            <MenuItem Header="Вибрати усі" Name="cmSelectAll" Click="cmSelectAll_Click" />
                             <Separator />
-                            <MenuItem Header="Copy URL to Clipboard" Name="cmCopyURLtoClipboard" Click="cmCopyURLtoClipboard_Click" />
+                            <MenuItem Header="Скопіювати URL" Name="cmCopyURLtoClipboard" Click="cmCopyURLtoClipboard_Click" />
                         </ContextMenu>
                     </DataGrid.ContextMenu>
                     <DataGrid.CellStyle>
@@ -190,22 +190,22 @@
                         </Style>
                     </DataGrid.CellStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="File Name" CellStyle="{StaticResource LeftCellStyle}" MinWidth="150" Width="150" x:Name="tcFileName" Binding="{Binding FileName, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Size" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="80" Width="80" x:Name="tcSize" Binding="{Binding FileSizeString, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Downloaded" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="80" Width="80" x:Name="tcDownloaded" Binding="{Binding DownloadedSizeString, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Percent" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="55" Width="55" x:Name="tcPercent" Binding="{Binding PercentString, Mode=OneWay}" />
-                        <DataGridTemplateColumn Header="Progress" HeaderStyle="{StaticResource CenterHeaderStyle}" CellStyle="{StaticResource CenterCellStyle}" MinWidth="130" Width="130" x:Name="tcProgress">
+                        <DataGridTextColumn Header="Назва файлу" CellStyle="{StaticResource LeftCellStyle}" MinWidth="150" Width="150" x:Name="tcFileName" Binding="{Binding FileName, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Розмір" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="80" Width="80" x:Name="tcSize" Binding="{Binding FileSizeString, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Завантажено" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="80" Width="80" x:Name="tcDownloaded" Binding="{Binding DownloadedSizeString, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Відсотків" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="55" Width="55" x:Name="tcPercent" Binding="{Binding PercentString, Mode=OneWay}" />
+                        <DataGridTemplateColumn Header="Поступ" HeaderStyle="{StaticResource CenterHeaderStyle}" CellStyle="{StaticResource CenterCellStyle}" MinWidth="130" Width="130" x:Name="tcProgress">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <ProgressBar Name="progressBar" Value="{Binding Progress, Mode=OneWay}" VerticalAlignment="Center" Height="16" MinHeight="16" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Speed" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="85" Width="85" x:Name="tcSpeed" Binding="{Binding DownloadSpeed, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Time Left" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="70" Width="70" x:Name="tcTimeLeft" Binding="{Binding TimeLeft, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Status" CellStyle="{StaticResource LeftCellStyle}" MinWidth="95" Width="95" x:Name="tcStatus" Binding="{Binding StatusString, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Added On" HeaderStyle="{StaticResource CenterHeaderStyle}" CellStyle="{StaticResource CenterCellStyle}" MinWidth="130" Width="130" x:Name="tcAddedOn" Binding="{Binding AddedOnString, Mode=OneWay}" />
-                        <DataGridTextColumn Header="Completed On" HeaderStyle="{StaticResource CenterHeaderStyle}" CellStyle="{StaticResource CenterCellStyle}" MinWidth="130" Width="130" x:Name="tcCompletedOn" Binding="{Binding CompletedOnString, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Швидкість" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="85" Width="85" x:Name="tcSpeed" Binding="{Binding DownloadSpeed, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Залишилося" HeaderStyle="{StaticResource RightHeaderStyle}" CellStyle="{StaticResource RightCellStyle}" MinWidth="70" Width="70" x:Name="tcTimeLeft" Binding="{Binding TimeLeft, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Стан" CellStyle="{StaticResource LeftCellStyle}" MinWidth="95" Width="95" x:Name="tcStatus" Binding="{Binding StatusString, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Додано" HeaderStyle="{StaticResource CenterHeaderStyle}" CellStyle="{StaticResource CenterCellStyle}" MinWidth="130" Width="130" x:Name="tcAddedOn" Binding="{Binding AddedOnString, Mode=OneWay}" />
+                        <DataGridTextColumn Header="Завершено" HeaderStyle="{StaticResource CenterHeaderStyle}" CellStyle="{StaticResource CenterCellStyle}" MinWidth="130" Width="130" x:Name="tcCompletedOn" Binding="{Binding CompletedOnString, Mode=OneWay}" />
                     </DataGrid.Columns>
                 </DataGrid>
             </ScrollViewer>
