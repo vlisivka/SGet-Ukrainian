@@ -15,7 +15,7 @@ namespace SGet
         // Catch exceptions which occur outside try-catch blocks
         private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            Xceed.Wpf.Toolkit.MessageBox.Show(e.Exception.Message + "\n\n" + e.Exception.InnerException.ToString(), "Error");
+            Xceed.Wpf.Toolkit.MessageBox.Show(e.Exception.Message + "\n\n" + e.Exception.InnerException.ToString(), "Помилка");
             e.Handled = true;
             Application.Current.Shutdown();
         }

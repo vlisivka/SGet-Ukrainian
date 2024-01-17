@@ -477,15 +477,15 @@ namespace SGet
 
                     if (this.FileSize <= 0)
                     {
-                        Xceed.Wpf.Toolkit.MessageBox.Show("The requested file does not exist!\nFile size: "+this.FileSize, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        Xceed.Wpf.Toolkit.MessageBox.Show("Вказаний файл не існує!\nРозмір файлу: "+this.FileSize, "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                         this.HasError = true;
                     }
                 }
             }
             catch (Exception)
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show("There was an error while getting the file information. Please make sure the URL is accessible.",
-                                                "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Xceed.Wpf.Toolkit.MessageBox.Show("Помилка отримання інформації про файл. Переконайтеся що ви маєте доступ до файлу.",
+                                                "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                 this.HasError = true;
             }
         }

@@ -107,7 +107,7 @@ namespace SGet
             {
                 if (tbSaveAs.Text.Length < 3 || !tbSaveAs.Text.Contains("."))
                 {
-                    Xceed.Wpf.Toolkit.MessageBox.Show("The local file name is not valid.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Ім'я локального файлу неправильне.", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
@@ -135,17 +135,17 @@ namespace SGet
                     // Check if there is already an ongoing download on that path
                     if (File.Exists(tempPath))
                     {
-                        string message = "There is already a download in progress at the specified path.";
-                        Xceed.Wpf.Toolkit.MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        string message = "Тут вже відбувається завантаження з тим самим шляхом до файлу.";
+                        Xceed.Wpf.Toolkit.MessageBox.Show(message, "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
 
                     // Check if the file already exists
                     if (File.Exists(filePath))
                     {
-                        string message = "There is already a file with the same name, do you want to overwrite it? "
-                                       + "If not, please change the file name or download folder.";
-                        MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "File Name Conflict: " + filePath, MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                        string message = "Тут вже є файл з таким іменем. Перезаписати? "
+                                       + "Якщо ні, змініть назву файлу або папку призначення.";
+                        MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "Конфлікт імен файлів: " + filePath, MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                         if (result == MessageBoxResult.Yes)
                         {
@@ -186,19 +186,19 @@ namespace SGet
                 }
                 catch (Exception ex)
                 {
-                    Xceed.Wpf.Toolkit.MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Xceed.Wpf.Toolkit.MessageBox.Show(ex.Message, "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show("The URL is not a valid download link.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Xceed.Wpf.Toolkit.MessageBox.Show("URL не є правильним посиланням на завантаження.", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog fbDialog = new FolderBrowserDialog();
-            fbDialog.Description = "Choose Download Folder";
+            fbDialog.Description = "Виберіть папку для завантаження";
             fbDialog.ShowNewFolderButton = true;
             DialogResult result = fbDialog.ShowDialog();
 
@@ -232,7 +232,7 @@ namespace SGet
                 drive = tbDownloadFolder.Text.Remove(3);
             else
                 drive = tbDownloadFolder.Text;
-            lblFreeSpace.Content = "Free Disk Space: " + GetFreeDiskSpace(drive);
+            lblFreeSpace.Content = "Вільний простір на диску: " + GetFreeDiskSpace(drive);
         }
 
         private void cbStartImmediately_Click(object sender, RoutedEventArgs e)

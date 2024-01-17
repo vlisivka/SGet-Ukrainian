@@ -212,8 +212,8 @@ namespace SGet
                         // Check if the file already exists
                         if (File.Exists(filePath))
                         {
-                            string message = "There is already a file with the same name, do you want to overwrite it?";
-                            MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "File Name Conflict: " + filePath, MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                            string message = "Вже існує файл з таким іменем! Перезаписати?";
+                            MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "Конфлікт імен файлів: " + filePath, MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                             if (result == MessageBoxResult.Yes)
                             {
@@ -252,17 +252,17 @@ namespace SGet
                 }
                 catch (Exception ex)
                 {
-                    Xceed.Wpf.Toolkit.MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    Xceed.Wpf.Toolkit.MessageBox.Show(ex.Message, "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
-                Xceed.Wpf.Toolkit.MessageBox.Show("There are no files to download!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Xceed.Wpf.Toolkit.MessageBox.Show("Немає файлів для завантаження!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void btnBrowse_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog fbDialog = new FolderBrowserDialog();
-            fbDialog.Description = "Choose Batch Download Folder";
+            fbDialog.Description = "Виберіть папку для масового завантаження";
             fbDialog.ShowNewFolderButton = true;
             DialogResult result = fbDialog.ShowDialog();
 

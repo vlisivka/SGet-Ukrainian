@@ -262,7 +262,7 @@ namespace SGet
             }
             catch (Exception)
             {
-                Xceed.Wpf.Toolkit.MessageBox.Show("There was an error while loading the download list.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Xceed.Wpf.Toolkit.MessageBox.Show("Помилка завантаження списку файлів.", "Помила", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -328,7 +328,7 @@ namespace SGet
 
             if (Settings.Default.ConfirmExit)
             {
-                string message = "Are you sure you want to exit the application?";
+                string message = "Чи ви впевнені що хочете вийти?";
                 MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "SGet", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.No)
                 {
@@ -379,9 +379,9 @@ namespace SGet
                     propertyValues.Clear();
 
                 propertyValues.Add(download.Url.ToString());
-                string resumeSupported = "No";
+                string resumeSupported = "Ні";
                 if (download.SupportsRange)
-                    resumeSupported = "Yes";
+                    resumeSupported = "Так";
                 propertyValues.Add(resumeSupported);
                 propertyValues.Add(download.FileType);
                 propertyValues.Add(download.DownloadFolder);
@@ -475,20 +475,20 @@ namespace SGet
 
         private void DownloadsList_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (DownloadManager.Instance.TotalDownloads == 1)
+            if (DownloadManager.Instance.TotalDownloads > 4)
             {
                 EnableMenuItems(true);
-                this.statusBarDownloads.Content = "1 Download";
+                this.statusBarDownloads.Content = DownloadManager.Instance.TotalDownloads + " завантажень";
             }
-            else if (DownloadManager.Instance.TotalDownloads > 1)
+            else if (DownloadManager.Instance.TotalDownloads >= 1)
             {
                 EnableMenuItems(true);
-                this.statusBarDownloads.Content = DownloadManager.Instance.TotalDownloads + " Downloads";
+                this.statusBarDownloads.Content = DownloadManager.Instance.TotalDownloads + " завантаження";
             }
             else
             {
                 EnableMenuItems(false);
-                this.statusBarDownloads.Content = "Ready";
+                this.statusBarDownloads.Content = "Готовий";
             }
         }
 
@@ -528,9 +528,9 @@ namespace SGet
             if (active > 0)
             {
                 if (completed == 0)
-                    this.statusBarActive.Content = " (" + active + " Active)";
+                    this.statusBarActive.Content = " (" + active + " активних)";
                 else
-                    this.statusBarActive.Content = " (" + active + " Active, ";
+                    this.statusBarActive.Content = " (" + active + " активних, ";
             }
             else
                 this.statusBarActive.Content = String.Empty;
@@ -538,9 +538,9 @@ namespace SGet
             if (completed > 0)
             {
                 if (active == 0)
-                    this.statusBarCompleted.Content = " (" + completed + " Completed)";
+                    this.statusBarCompleted.Content = " (" + completed + " завершених)";
                 else
-                    this.statusBarCompleted.Content = completed + " Completed)";
+                    this.statusBarCompleted.Content = completed + " завершених)";
             }
             else
                 this.statusBarCompleted.Content = String.Empty;
@@ -554,8 +554,8 @@ namespace SGet
 
                 if (download.Status == DownloadStatus.Completed)
                 {
-                    string title = "Download Completed";
-                    string text = download.FileName + " has finished downloading.";
+                    string title = "Завантаження закінчено";
+                    string text ="Завантаження " + download.FileName + " завершено.";
 
                     XNotifyIcon.ShowBalloonTip(title, text, BalloonIcon.Info);
                 }
@@ -585,8 +585,8 @@ namespace SGet
                 MessageBoxResult result = MessageBoxResult.None;
                 if (Settings.Default.ConfirmDelete)
                 {
-                    string message = "Are you sure you want to delete the selected download(s)?";
-                    result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    string message = "Ви дійсно хочете видалити вибрані завантаження?";
+                    result = Xceed.Wpf.Toolkit.MessageBox.Show(message, "Попередження", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 }
 
                 if (result == MessageBoxResult.Yes || !Settings.Default.ConfirmDelete)
