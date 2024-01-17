@@ -89,9 +89,9 @@ namespace SGet
 
                     if (freeSpace < Math.Pow(1024, 3))
                     {
-                        return mbFreeSpace.ToString("#.00", numberFormat) + " MB";
+                        return mbFreeSpace.ToString("#.00", numberFormat) + " Мб";
                     }
-                    return gbFreeSpace.ToString("#.00", numberFormat) + " GB";
+                    return gbFreeSpace.ToString("#.00", numberFormat) + " Гб";
                 }
             }
             return String.Empty;
@@ -232,7 +232,7 @@ namespace SGet
                 drive = tbDownloadFolder.Text.Remove(3);
             else
                 drive = tbDownloadFolder.Text;
-            lblFreeSpace.Content = "Вільний простір на диску: " + GetFreeDiskSpace(drive);
+            lblFreeSpace.Content = "Вільний простір: " + GetFreeDiskSpace(drive);
         }
 
         private void cbStartImmediately_Click(object sender, RoutedEventArgs e)

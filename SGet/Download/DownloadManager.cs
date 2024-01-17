@@ -76,13 +76,13 @@ namespace SGet
             double gigaByteSize = megaByteSize / 1024D;
 
             if (byteSize < 1024)
-                return String.Format(numberFormat, "{0} B", byteSize);
+                return String.Format(numberFormat, "{0} б", byteSize);
             else if (byteSize < 1048576)
-                return String.Format(numberFormat, "{0:0.00} kB", kiloByteSize);
+                return String.Format(numberFormat, "{0:0.00} кб", kiloByteSize);
             else if (byteSize < 1073741824)
-                return String.Format(numberFormat, "{0:0.00} MB", megaByteSize);
+                return String.Format(numberFormat, "{0:0.00} Мб", megaByteSize);
             else
-                return String.Format(numberFormat, "{0:0.00} GB", gigaByteSize);
+                return String.Format(numberFormat, "{0:0.00} Гб", gigaByteSize);
         }
 
         // Format download speed string
@@ -94,11 +94,11 @@ namespace SGet
             if (speed <= 0)
                 return String.Empty;
             else if (speed < 1024)
-                return speed.ToString() + " B/s";
+                return speed.ToString() + " б/с";
             else if (speed < 1048576)
-                return kbSpeed.ToString("#.00", numberFormat) + " kB/s";
+                return kbSpeed.ToString("#.00", numberFormat) + " кБ/с";
             else
-                return mbSpeed.ToString("#.00", numberFormat) + " MB/s";
+                return mbSpeed.ToString("#.00", numberFormat) + " Мб/с";
         }
 
         // Format time span string so it can display values of more than 24 hours
